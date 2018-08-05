@@ -1,0 +1,14 @@
+﻿  Stack_point.c
+  Source.c
+c:\code\degree_projects\multiprinter\source.c(44): warning C4133: 'function': incompatible types - from 'int *' to 'stack_type *'
+c:\code\degree_projects\multiprinter\source.c(45): warning C4133: 'function': incompatible types - from 'int *' to 'queue_type *'
+c:\code\degree_projects\multiprinter\source.c(54): warning C4133: 'function': incompatible types - from 'int *' to 'queue_type *'
+  Queue_point.c
+  Printer.c
+c:\code\degree_projects\multiprinter\printer.c(23): warning C4047: 'function': 'stack *' differs in levels of indirection from 'STRUCT_TYPE *'
+c:\code\degree_projects\multiprinter\printer.c(23): warning C4024: 'stack_is_empty': different types for formal and actual parameter 1
+c:\code\degree_projects\multiprinter\printer.c(24): warning C4047: 'function': 'stack *' differs in levels of indirection from 'STRUCT_TYPE *'
+c:\code\degree_projects\multiprinter\printer.c(24): warning C4024: 'pop': different types for formal and actual parameter 1
+c:\code\degree_projects\multiprinter\printer.c(41): warning C4013: 'printf' undefined; assuming extern returning int
+  Generating Code...
+  MultiPrinter.vcxproj -> C:\code\degree_projects\MultiPrinter\Debug\MultiPrinter.exe
