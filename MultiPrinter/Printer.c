@@ -5,8 +5,12 @@
 
 void PrintStack(STRUCT_TYPE *s, StructDataType dataType,void *helperVar, char *devider);
 void PrintQueue(STRUCT_TYPE *q, StructDataType dataType, void *helperVar, char *devider);
+void PrintCharArrays(char *arrayToPrint, StructDataType dataType, void* helper, int columnSize, int rowSize, char *devider);
+void PrintIntArrays(int *arrayToPrint, StructDataType dataType, void* helper, int columnSize, int rowSize, char *devider);
 void PrintNode(void *node, StructDataType dataType);
 void PrintDevider(char *devider);
+
+
 
 
 void PrintComplexStruct(STRUCT_TYPE *structToPrint, StructType typeOfStruct, StructDataType dataType,void *helperVar,char *devider) {
@@ -19,21 +23,13 @@ void PrintComplexStruct(STRUCT_TYPE *structToPrint, StructType typeOfStruct, Str
 	}
 }
 
-void PrintArrayStruct(void* arrayToPrint, StructDataType arrayDataType, void * size,int dimension,char *devider) {
-	switch (dimension)
-	{
-	case 1: PrintArray(arrayToPrint, arrayDataType, size,devider);
-		break;
-	case 2: print2DArray(arrayToPrint, arrayDataType, size);
-		break;
-	}
-}
-
 void PrintStack(STRUCT_TYPE *s, StructDataType dataType,void *helperVar, char *devider){
 	//Not generic type
 	while (!stack_is_empty(s) ){
 		pop(s, &helperVar);
 		PrintNode(helperVar, dataType);
+		if (!stack_is_empty(s))
+			PrintDevider(devider);
 	}
 }
 
@@ -47,13 +43,43 @@ void PrintQueue(STRUCT_TYPE *q, StructDataType dataType, void *helperVar,char *d
 	}
 }
 
-void PrintArray(void* arrayToPrint, StructDataType dataType, void *helperVar, char *devider){
-	for (int i = 0; i < helperVar; i++) {
-		PrintNode(*(arrayToPrint + i), dataType);
+void PrintArrayStruct(void* arrayToPrint, StructDataType dataType, void *helperVar,int columnSize,int rowSize, char *devider){
+	
+	switch (dataType)
+	{
+	case Int:
+		PrintIntArrays(arrayToPrint,dataType,helperVar,columnSize,rowSize, devider);
+		break;
+	case Char:
+		PrintCharArrays(arrayToPrint, dataType, helperVar, columnSize, rowSize, devider);
+		break;
 	}
 }
 
-void print2DArray(){}
+void PrintIntArrays(int *arrayToPrint, StructDataType dataType,void* helper,int columnSize,int rowSize, char *devider) {
+	for (int i = 0; i < rowSize; i++) {
+		for (int j = 0; j < columnSize; j++) {
+
+			PrintNode(*(arrayToPrint+(i*columnSize)+j), dataType);
+			if(j + 1 <columnSize)
+				PrintDevider(devider);
+		}
+		printf("\n");
+	}
+}
+
+
+void PrintCharArrays(char *arrayToPrint, StructDataType dataType, void* helper, int columnSize, int rowSize, char *devider) {
+	for (int i = 0; i < rowSize; i++) {
+		for (int j = 0; j < columnSize; j++) {
+
+			PrintNode(*(arrayToPrint + (i*columnSize) + j), dataType);
+			if (j + 1 <columnSize)
+				PrintDevider(devider);
+		}
+		printf("\n");
+	}
+}
 
 void PrintNode(void *node, StructDataType dataType) {
 	switch (dataType)

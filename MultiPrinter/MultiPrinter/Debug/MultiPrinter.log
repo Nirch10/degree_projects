@@ -1,14 +1,14 @@
-﻿  Stack_point.c
-  Source.c
-c:\code\degree_projects\multiprinter\source.c(44): warning C4133: 'function': incompatible types - from 'int *' to 'stack_type *'
-c:\code\degree_projects\multiprinter\source.c(45): warning C4133: 'function': incompatible types - from 'int *' to 'queue_type *'
-c:\code\degree_projects\multiprinter\source.c(54): warning C4133: 'function': incompatible types - from 'int *' to 'queue_type *'
-  Queue_point.c
-  Printer.c
-c:\code\degree_projects\multiprinter\printer.c(23): warning C4047: 'function': 'stack *' differs in levels of indirection from 'STRUCT_TYPE *'
-c:\code\degree_projects\multiprinter\printer.c(23): warning C4024: 'stack_is_empty': different types for formal and actual parameter 1
-c:\code\degree_projects\multiprinter\printer.c(24): warning C4047: 'function': 'stack *' differs in levels of indirection from 'STRUCT_TYPE *'
-c:\code\degree_projects\multiprinter\printer.c(24): warning C4024: 'pop': different types for formal and actual parameter 1
-c:\code\degree_projects\multiprinter\printer.c(41): warning C4013: 'printf' undefined; assuming extern returning int
-  Generating Code...
+﻿  Source.c
+c:\code\degree_projects\multiprinter\source.c(43): warning C4047: 'function': 'STRUCT_TYPE *' differs in levels of indirection from 'stack *'
+c:\code\degree_projects\multiprinter\source.c(43): warning C4024: 'PrintComplexStruct': different types for formal and actual parameter 1
+c:\code\degree_projects\multiprinter\source.c(43): warning C4022: 'PrintComplexStruct': pointer mismatch for actual parameter 4
+c:\code\degree_projects\multiprinter\source.c(46): warning C4022: 'PrintArrayStruct': pointer mismatch for actual parameter 3
+c:\code\degree_projects\multiprinter\source.c(49): warning C4022: 'PrintArrayStruct': pointer mismatch for actual parameter 3
+c:\code\degree_projects\multiprinter\source.c(54): warning C4022: 'PrintComplexStruct': pointer mismatch for actual parameter 4
+c:\code\degree_projects\multiprinter\source.c(18): warning C4047: 'initializing': 'char' differs in levels of indirection from 'char [1]'
+c:\code\degree_projects\multiprinter\source.c(24): warning C4047: 'initializing': 'int' differs in levels of indirection from 'int *'
+c:\code\degree_projects\multiprinter\source.c(25): warning C4047: 'initializing': 'int **' differs in levels of indirection from 'int (*)[4]'
+c:\code\degree_projects\multiprinter\source.c(66): warning C4133: 'function': incompatible types - from 'int *' to 'stack_type *'
+c:\code\degree_projects\multiprinter\source.c(67): warning C4133: 'function': incompatible types - from 'int *' to 'queue_type *'
+c:\code\degree_projects\multiprinter\source.c(76): warning C4133: 'function': incompatible types - from 'int *' to 'queue_type *'
   MultiPrinter.vcxproj -> C:\code\degree_projects\MultiPrinter\Debug\MultiPrinter.exe

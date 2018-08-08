@@ -2,7 +2,7 @@ typedef queue STRUCT_TYPE;
 
 typedef enum {Stack,Queue,OrderedList} StructType;
 
-typedef enum {Int,Double,Char,String} StructDataType;
+typedef enum { Int, Double, Char, String} StructDataType;
 
 //Gets a struct ,Prints its data
 //structToPrint: the struct to print 
@@ -14,4 +14,5 @@ void PrintComplexStruct(STRUCT_TYPE *structToPrint, StructType typeOfStruct, Str
 
 
 //Gets Arrays, Prints its data 
-void PrintArrayStruct(StructDataType arrayDataType, void* size, int dimension);
+//helpervar - represents its dimension
+void PrintArrayStruct(void* arrayToPrint, StructDataType dataType, void *helperVar,int columnSize, int rowSize, char *devider);
