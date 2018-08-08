@@ -15,7 +15,7 @@ typedef stack struct_type;
 
 void main() {
 	queue queue1, queue2;
-
+	char a = "";
 	int queueData = 0, stackQueue = 0;
 	create_queue(&queue1);
 	create_queue(&queue2);
@@ -27,9 +27,9 @@ void main() {
 	enqueue('8', &queue2);
 	enqueue('6', &queue2);
 	enqueue('5', &queue2);
-	Print(&queue1, Queue, Char);
+	Print(&queue1, Queue, Char, "f", "	");
 	printf("\n");
-	Print(&queue2, Queue, Char);
+	Print(&queue2, Queue, Char,5,",");
 	printf("%d", IsSimetricQueue(&queue1, &queue2));
 }
 
