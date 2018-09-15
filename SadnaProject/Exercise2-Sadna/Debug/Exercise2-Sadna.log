@@ -1,0 +1,6 @@
+﻿  315942235_316118421.c
+c:\users\ran abramovich\documents\visual studio 2015\projects\exercise2-sadna\exercise2-sadna\315942235_316118421.c(93): warning C4013: 'gets' undefined; assuming extern returning int
+c:\users\ran abramovich\documents\visual studio 2015\projects\exercise2-sadna\exercise2-sadna\315942235_316118421.c(98): warning C4133: 'function': incompatible types - from 'char **' to 'int **'
+c:\users\ran abramovich\documents\visual studio 2015\projects\exercise2-sadna\exercise2-sadna\315942235_316118421.c(150): warning C4018: '<': signed/unsigned mismatch
+  Exercise2-Sadna.vcxproj -> C:\Users\Ran Abramovich\documents\visual studio 2015\Projects\Exercise2-Sadna\Debug\Exercise2-Sadna.exe
+  Exercise2-Sadna.vcxproj -> C:\Users\Ran Abramovich\documents\visual studio 2015\Projects\Exercise2-Sadna\Debug\Exercise2-Sadna.pdb (Full PDB)
