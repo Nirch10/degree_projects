@@ -110,8 +110,11 @@ void Ex2()
 
 void Ex3()
 {
-	char ch;
-	ch = commonestLetter("input.txt");
+	char ch, filename[MAX];
+	printf("Please enter the file name : \n");
+	rewind(stdin);
+	gets(filename);
+	ch = commonestLetter(filename);
 	if (ch)
 		printf("The commonest letter is %c\n", ch);
 	else
@@ -131,11 +134,11 @@ void Ex4()
 void Ex5()
 {
 	char decleration[MAX], filename[MAX];
-	rewind(stdin);
 	printf("Please enter the decleration string : \n");
-	gets(decleration);
 	rewind(stdin);
+	gets(decleration);
 	printf("Please enter the file name : \n");
+	rewind(stdin);
 	gets(filename);
 	decleration_string_to_file(decleration, filename);
 	print_file_content(filename);
