@@ -1,0 +1,2 @@
+c requires 1 bytes
+*cptr requires 4 bytes

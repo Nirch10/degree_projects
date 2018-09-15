@@ -1,0 +1,3 @@
+a requires 8 bytes
+*arr requires 4 bytes
+arr[100] requires 800 bytes
