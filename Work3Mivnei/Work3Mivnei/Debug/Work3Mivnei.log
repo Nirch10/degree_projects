@@ -1,0 +1,3 @@
+﻿  BinTree.c
+c:\users\nirch10\source\repos\work3mivnei\work3mivnei\bintree.c(19): warning C4098: 'IsBinTreeEmpty': 'void' function returning a value
+  Work3Mivnei.vcxproj -> C:\Users\Nirch10\source\repos\Work3Mivnei\Debug\Work3Mivnei.exe
