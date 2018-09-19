@@ -14,7 +14,7 @@ typedef struct BinTreeNode
 //Gets a pointer to new tree node and creates new empty binTree
 void InitBinTree(BinTreeNode* binTree);
 
-void IsBinTreeEmpty(BinTreeNode* binTree);
+int IsBinTreeEmpty(BinTreeNode* binTree);
 
 //Gets node and a parent - adds it to node
 void InsertNode(BinTreeNode* nodeParent, BinTreeNode * newNode, int isLeft);

@@ -15,7 +15,7 @@ void InitBinTree(BinTreeNode* binTree) {
 	binTree = NULL;
 }
 
-void IsBinTreeEmpty(BinTreeNode* binTree) {
+int IsBinTreeEmpty(BinTreeNode* binTree) {
 	return binTree == NULL;
 }
 
@@ -69,6 +69,7 @@ void PrintInOrder(BinTreeNode *binTree) {
 		else if (binPtr->parent != NULL) {
 			while (binPtr->parent != NULL&& binPtr == binPtr->parent->right)binPtr = binPtr->parent;
 			if (binPtr->parent != NULL)binPtr = binPtr->parent;
+			else binPtr = NULL;
 		}
 		else binPtr = NULL;
 	}

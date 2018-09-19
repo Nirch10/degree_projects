@@ -21,13 +21,13 @@ void CreateRegBinTree(BinTreeNode* tree);
 void main() {
 	BinTreeNode* tree1 = NULL;
 	InitBinTree(tree1);
-	CreateRegBinTree(tree1);
+	CreateSearchBinTree(&tree1);
 	PrintInOrder(tree1);
 }
 
-void CreateSearchBinTree(BinTreeNode * tree)
+void CreateSearchBinTree(BinTreeNode ** tree)
 {
-	BinTreeNode * ptr = tree,*newNode =NULL;
+	BinTreeNode* newNode =NULL;
 	int isFinished = 0, data = 0;
 	printf("Youre about to create a search Binary tree :) ! \nbetween each node youll by asked whether to finish creating the tree\nWhen you decide to stop - just enter 15 ,otherwise type any number(int pls!)");
 	printf("Lets try it : Do you want to start? (if you wish to stop press 15)\n");
@@ -44,9 +44,32 @@ void CreateSearchBinTree(BinTreeNode * tree)
 
 }
 
-void InsertToSearchedTree(BinTreeNode* searchedTree,BinTreeNode* newNode){
-	//TODO:fill function
+void InsertToSearchedTree(BinTreeNode** searchedTree,BinTreeNode* newNode){
+	if (IsBinTreeEmpty(*searchedTree)) {
+		*searchedTree= newNode;
+		return;
+	}
+	
+	if ((*searchedTree)->data > newNode->data) {
+		if ((*searchedTree)->left == NULL) {
+			(*searchedTree)->left = newNode;
+			newNode->parent = *searchedTree;
+			return;
+		}
+		InsertToSearchedTree(&(*searchedTree)->left, newNode);
+	}
+
+	else {
+		if ((*searchedTree)->right == NULL) {
+			(*searchedTree)->right = newNode;
+			newNode->parent = *searchedTree;
+			return;
+		}
+		InsertToSearchedTree(&(*searchedTree)->right, newNode);
+	}
 }
+
+
 
 void CreateRegBinTree(BinTreeNode * tree)
 {
