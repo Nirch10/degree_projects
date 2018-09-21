@@ -3,11 +3,13 @@
 #include <stdlib.h>
 #include<stdio.h>
 #include "BinTree.h"
+#include "Queue_point.h"
 
 #pragma region Functions Declaretion
-void CreateSearchBinTree(BinTreeNode* tree);
-void InsertToSearchedTree(BinTreeNode* searchedTree, BinTreeNode* newNode);
+void CreateSearchBinTree(BinTreeNode** tree);
 void CreateRegBinTree(BinTreeNode* tree);
+void InsertToSearchedTree(BinTreeNode ** searchedTree, BinTreeNode * newNode);
+void PrintTreeByHeight(BinTreeNode* tree);
 #pragma endregion
 
 #pragma region Def Declerations
@@ -23,6 +25,8 @@ void main() {
 	InitBinTree(tree1);
 	CreateSearchBinTree(&tree1);
 	PrintInOrder(tree1);
+	printf("\n");
+	PrintTreeByHeight(tree1);
 }
 
 void CreateSearchBinTree(BinTreeNode ** tree)
@@ -68,6 +72,23 @@ void InsertToSearchedTree(BinTreeNode** searchedTree,BinTreeNode* newNode){
 		InsertToSearchedTree(&(*searchedTree)->right, newNode);
 	}
 }
+
+void PrintTreeByHeight(BinTreeNode* tree) {
+	BinTreeNode *helper;
+	queue hQueue ;
+	create_queue(&hQueue);
+	if (IsBinTreeEmpty(tree))return;
+	enqueue(tree, &hQueue);
+	while (!queue_is_empty(&hQueue)) {
+		dequeue(&hQueue, &helper);
+		printf("%d ", helper->data);
+		if (helper->left)
+			enqueue((helper->left), &hQueue);
+		if (helper->right)
+			enqueue(helper->right, &hQueue);
+	}
+}
+
 
 
 
