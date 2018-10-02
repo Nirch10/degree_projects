@@ -1,2 +1,5 @@
 ﻿  BinTree.c
+  315942235_316118421.c
+c:\code\degree_projects\work3mivnei\work3mivnei\315942235_316118421.c(151): warning C4047: '=': 'DATA_TYPE' differs in levels of indirection from 'void *'
+  Generating Code...
   Work3Mivnei.vcxproj -> C:\code\degree_projects\Work3Mivnei\Debug\Work3Mivnei.exe

@@ -26,10 +26,10 @@
     <ClCompile Include="BinTree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source.c">
+    <ClCompile Include="Queue_point.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Queue_point.c">
+    <ClCompile Include="315942235_316118421.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
