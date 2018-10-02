@@ -6,10 +6,11 @@
 #include "Queue_point.h"
 
 #pragma region Functions Declaretion
+int ChooseEx();
 void CreateSearchBinTree(BinTreeNode** tree);
-void CreateRegBinTree(BinTreeNode* tree);
 void InsertToSearchedTree(BinTreeNode ** searchedTree, BinTreeNode * newNode);
 void PrintTreeByHeight(BinTreeNode* tree);
+void FreeTree(BinTreeNode * tree);
 #pragma endregion
 
 #pragma region Def Declerations
@@ -21,13 +22,58 @@ void PrintTreeByHeight(BinTreeNode* tree);
 
 
 void main() {
-	BinTreeNode* tree1 = NULL;
-	InitBinTree(tree1);
-	CreateSearchBinTree(&tree1);
-	PrintInOrder(tree1);
-	printf("\n");
-	PrintTreeByHeight(tree1);
+
+	int currentChoise = 6;
+	BinTreeNode* tr = NULL;
+	
+	currentChoise = ChooseEx();
+	while (currentChoise != 0) {
+		switch (currentChoise) {
+		case 1: {InitBinTree(tr); 
+				CreateSearchBinTree(&tr);
+				break;
+		}
+		case 2:
+		{if (IsBinTreeEmpty(tr))
+			printf("tree empty\n");
+		else
+			printf("tree not empty\n");
+			break; }
+		case 3:
+			PrintInOrder(tr);
+			break;
+		case 4: {
+			printf("\n");
+			PrintTreeByHeight(tr);
+			break; }
+		case 5:
+		{	FreeTree(tr); 
+		break; }
+		default:
+		{
+			currentChoise = 0;
+			FreeTree(tr);
+		
+		}
+		}
+		if (currentChoise != 0)
+			currentChoise = ChooseEx();
+	}
+
+
+	
+	
+	
 }
+
+int ChooseEx() {
+	int currentChoise = 0;
+	printf("\nHello, welcome to our BinTree Factory!\nTo Create One pls press 1\nTo Check your tree status pls press 2\nTo print your tree In order pls press 3\nTo print your tree by height pls press 4\nTo release your tree pls press 5\nTo exit press 0\n");
+	scanf("\n%d", &currentChoise);
+	return currentChoise;
+
+}
+
 
 void CreateSearchBinTree(BinTreeNode ** tree)
 {
@@ -89,17 +135,13 @@ void PrintTreeByHeight(BinTreeNode* tree) {
 	}
 }
 
-
-
-
-void CreateRegBinTree(BinTreeNode * tree)
-{
-	BinTreeNode * ptr = tree;
-	int data = 0, isLeft = 0;
-	scanf("%d", &data);
-	while (data != -1) {
-		if (ptr != NULL) {
-		}
-	}
-
+void FreeTree(BinTreeNode* tree) {
+	if (IsBinTreeEmpty(tree))
+		return;
+	FreeTree(tree->left);
+	FreeTree(tree->right);
+	tree->left = NULL;
+	tree->right = NULL;
+	tree->data = NULL;
+	free(tree);
 }
